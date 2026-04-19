@@ -1,153 +1,690 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MANOJ SALT SUPPLYERS | Makhana & Salt</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manoj Salt Suppliers - Quality Salt & Makhana Products</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e5a7a;
+            --secondary-color: #2ecc71;
+            --accent-color: #f39c12;
+            --dark-bg: #1a1a1a;
+            --light-bg: #f9f9f9;
+            --text-dark: #333;
+            --text-light: #666;
+            --border-radius: 10px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #16a085 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo-text h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-top: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #16a085 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light-bg);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            border: 1px solid #e0e0e0;
+            animation: slideUp 0.6s ease-out forwards;
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #4caf50;
+        }
+
+        .product-card.makhana .product-image {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            color: #ff9800;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .product-info p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .product-price {
+            font-size: 18px;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .btn-order {
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 14px;
+        }
+
+        .btn-order:hover {
+            background: var(--secondary-color);
+            transform: scale(1.02);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--light-bg);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .contact-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .btn-social {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20ba5a;
+            transform: scale(1.05);
+        }
+
+        .btn-call {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-call:hover {
+            background: var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.1);
+                padding: 15px;
+                border-radius: 5px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 40px 15px;
+            }
+
+            section h2 {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            nav a {
+                display: block;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            section h2 {
+                font-size: 24px;
+            }
+
+            .logo-text h1 {
+                font-size: 18px;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand-wrap">
-      <p class="kicker">Since 2012</p>
-      <h1 class="brand">MANOJ SALT SUPPLYERS</h1>
-    </div>
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">Menu</button>
-    <nav id="mainNav">
-      <a href="#products">Products</a>
-      <a href="#why-us">Why Us</a>
-      <a href="#order">Order</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">🧂</div>
+                <div class="logo-text">
+                    <h1>Manoj Salt Suppliers</h1>
+                    <p>Quality & Purity Guaranteed</p>
+                </div>
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#salt">🧂 Salt</a></li>
+                    <li><a href="#makhana">🌾 Makhana</a></li>
+                    <li><a href="#contact">📞 Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
 
-  <main>
+    <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Bulk | Retail | Home Delivery</p>
-        <h2>Clean Salt. Fresh Makhana. Honest Supply.</h2>
-        <p>
-          We supply premium quality makhana and everyday cooking salt for homes,
-          kirana stores, and food businesses.
-        </p>
-        <div class="hero-cta">
-          <a class="btn primary" href="#order">Place Quick Order</a>
-          <a class="btn ghost" href="#products">View Collection</a>
+        <h2>Premium Salt & Makhana Products</h2>
+        <p>Experience the finest quality products sourced with care</p>
+        <div class="hero-buttons">
+            <a href="#salt" class="btn btn-primary">Explore Salt</a>
+            <a href="#makhana" class="btn btn-secondary">Explore Makhana</a>
         </div>
-      </div>
-      <div class="hero-card">
-        <p>Today Special</p>
-        <h3>Roasted Foxnut Combo</h3>
-        <ul>
-          <li>Classic Salted Makhana</li>
-          <li>Pink Salt Makhana</li>
-          <li>Black Salt Makhana</li>
-        </ul>
-      </div>
     </section>
 
-    <section id="products" class="products section">
-      <div class="section-head">
-        <p class="eyebrow">Our Core Stock</p>
-        <h2>Best-Selling Products</h2>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <span class="tag">Makhana</span>
-          <h3>Premium Plain Makhana</h3>
-          <p>Light, crunchy, and ideal for fasting snacks and healthy roasting.</p>
-          <p class="meta">Available Packs: 250g, 500g, 1kg</p>
-        </article>
-        <article class="card">
-          <span class="tag">Makhana</span>
-          <h3>Masala Makhana</h3>
-          <p>Balanced spice blend with a crisp texture and rich aroma.</p>
-          <p class="meta">Available Packs: 100g, 250g, 500g</p>
-        </article>
-        <article class="card">
-          <span class="tag">Salt</span>
-          <h3>Refined Iodized Salt</h3>
-          <p>Everyday kitchen essential with consistent grain quality.</p>
-          <p class="meta">Available Packs: 1kg, 5kg, 25kg</p>
-        </article>
-        <article class="card">
-          <span class="tag">Salt</span>
-          <h3>Rock Salt (Sendha Namak)</h3>
-          <p>Natural crystal salt suitable for fasting and special diets.</p>
-          <p class="meta">Available Packs: 500g, 1kg, 5kg</p>
-        </article>
-      </div>
+    <!-- Salt Products Section -->
+    <section id="salt">
+        <h2>🧂 Our Salt Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">🧂</div>
+                <div class="product-info">
+                    <h3>Premium Salt Mix</h3>
+                    <p>High-quality pure salt ideal for cooking, fasting, and everyday use. Naturally sourced and guaranteed purity.</p>
+                    <div class="product-price">₹100 per kg</div>
+                    <button class="btn-order" onclick="orderProduct('Premium Salt Mix', 9725363796)">Order Now</button>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="why-us" class="why section">
-      <div class="section-head">
-        <p class="eyebrow">Why Choose Us</p>
-        <h2>Reliable Local Supplier</h2>
-      </div>
-      <div class="points">
-        <div>
-          <h3>Fresh Stock Rotation</h3>
-          <p>Fast-moving inventory so products reach you crisp and clean.</p>
+    <!-- Makhana Products Section -->
+    <section id="makhana" style="background: var(--light-bg);">
+        <h2>🌾 Our Makhana Products</h2>
+        <div class="products-grid">
+            <div class="product-card makhana">
+                <div class="product-image">🌾</div>
+                <div class="product-info">
+                    <h3>Premium Makhana</h3>
+                    <p>100% pure, certified premium makhana seeds. Healthy, nutritious snack rich in proteins and minerals. Ready to roast or eat.</p>
+                    <div class="product-price">₹300 per 250g</div>
+                    <button class="btn-order" onclick="orderProduct('Premium Makhana', 9725363796)">Order Now</button>
+                </div>
+            </div>
         </div>
-        <div>
-          <h3>Fair Wholesale Pricing</h3>
-          <p>Transparent rates for households, resellers, and food shops.</p>
-        </div>
-        <div>
-          <h3>Doorstep Support</h3>
-          <p>Phone and WhatsApp support for repeat and urgent orders.</p>
-        </div>
-      </div>
     </section>
 
-    <section id="order" class="order section">
-      <div class="section-head">
-        <p class="eyebrow">Quick Order</p>
-        <h2>Send Your Requirement</h2>
-      </div>
-      <form id="orderForm" class="order-form">
-        <label>
-          Name
-          <input type="text" name="name" placeholder="Your name" required />
-        </label>
-        <label>
-          Phone
-          <input type="tel" name="phone" placeholder="10-digit mobile number" required />
-        </label>
-        <label>
-          Product
-          <select name="product" required>
-            <option value="">Select a product</option>
-            <option>Premium Plain Makhana</option>
-            <option>Masala Makhana</option>
-            <option>Refined Iodized Salt</option>
-            <option>Rock Salt (Sendha Namak)</option>
-          </select>
-        </label>
-        <label>
-          Quantity
-          <input type="text" name="quantity" placeholder="Example: 5 x 1kg" required />
-        </label>
-        <label>
-          Address
-          <textarea name="address" rows="3" placeholder="Delivery address" required></textarea>
-        </label>
-        <button type="submit" class="btn primary">Submit Enquiry</button>
-      </form>
-      <p id="formStatus" class="status" aria-live="polite"></p>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>📞 Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-card">
+                <div class="contact-icon">📱</div>
+                <h3>Mobile Number</h3>
+                <p>Call us or send a message anytime</p>
+                <a href="tel:9725363796" class="btn-social btn-call">📞 Call: 9725363796</a>
+                <a href="https://wa.me/919725363796" target="_blank" class="btn-social btn-whatsapp">💬 WhatsApp</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Address</h3>
+                <p>Shreeji Arcade - Kakoshi Fatak<br>Siddhpur</p>
+                <a href="https://maps.google.com/?q=Shreeji+Arcade+Kakoshi+Fatak+Siddhpur" target="_blank" class="btn-social btn-call">🗺️ View Map</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">💼</div>
+                <h3>Business Hours</h3>
+                <p>Monday - Saturday: 9:00 AM - 7:00 PM<br>Sunday: 10:00 AM - 5:00 PM</p>
+                <a href="https://wa.me/919725363796?text=Hi, I'm interested in your products" target="_blank" class="btn-social btn-whatsapp">📨 Message Us</a>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer id="contact" class="footer">
-    <h2>MANOJ SALT SUPPLYERS</h2>
-    <p>Call: +91 90000 00000 | WhatsApp: +91 90000 00000</p>
-    <p>Email: manojsaltsupplyers@example.com</p>
-    <p class="small">Serving quality makhana and salt with trust.</p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Manoj Salt Suppliers. All rights reserved.</p>
+        <p>Premium Quality | Trusted Service | Best Prices</p>
+        <div class="footer-links">
+            <a href="#salt">Salt Products</a>
+            <a href="#makhana">Makhana Products</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+    </footer>
 
-  <script src="script.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Order Product Function
+        function orderProduct(productName, phoneNumber) {
+            const message = `Hi, I'm interested in ordering ${productName}. Can you provide more details about bulk orders and delivery options?`;
+            const whatsappUrl = `https://wa.me/91${phoneNumber}?text=${encodeURIComponent(message)}`;
+            
+            // Show confirmation dialog
+            const confirmOrder = confirm(`Would you like to order ${productName}?\n\nYou'll be redirected to WhatsApp to place your order.`);
+            
+            if (confirmOrder) {
+                window.open(whatsappUrl, '_blank');
+            }
+        }
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideUp 0.6s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add page load animation
+        window.addEventListener('load', () => {
+            document.body.style.animation = 'fadeIn 0.5s ease-in';
+        });
+    </script>
 </body>
 </html>
