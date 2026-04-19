@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MANOJ SALT SUPPLYERS | Makhana & Salt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-wrap">
+      <p class="kicker">Since 2012</p>
+      <h1 class="brand">MANOJ SALT SUPPLYERS</h1>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">Menu</button>
+    <nav id="mainNav">
+      <a href="#products">Products</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#order">Order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Bulk | Retail | Home Delivery</p>
+        <h2>Clean Salt. Fresh Makhana. Honest Supply.</h2>
+        <p>
+          We supply premium quality makhana and everyday cooking salt for homes,
+          kirana stores, and food businesses.
+        </p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#order">Place Quick Order</a>
+          <a class="btn ghost" href="#products">View Collection</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <p>Today Special</p>
+        <h3>Roasted Foxnut Combo</h3>
+        <ul>
+          <li>Classic Salted Makhana</li>
+          <li>Pink Salt Makhana</li>
+          <li>Black Salt Makhana</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="products" class="products section">
+      <div class="section-head">
+        <p class="eyebrow">Our Core Stock</p>
+        <h2>Best-Selling Products</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Makhana</span>
+          <h3>Premium Plain Makhana</h3>
+          <p>Light, crunchy, and ideal for fasting snacks and healthy roasting.</p>
+          <p class="meta">Available Packs: 250g, 500g, 1kg</p>
+        </article>
+        <article class="card">
+          <span class="tag">Makhana</span>
+          <h3>Masala Makhana</h3>
+          <p>Balanced spice blend with a crisp texture and rich aroma.</p>
+          <p class="meta">Available Packs: 100g, 250g, 500g</p>
+        </article>
+        <article class="card">
+          <span class="tag">Salt</span>
+          <h3>Refined Iodized Salt</h3>
+          <p>Everyday kitchen essential with consistent grain quality.</p>
+          <p class="meta">Available Packs: 1kg, 5kg, 25kg</p>
+        </article>
+        <article class="card">
+          <span class="tag">Salt</span>
+          <h3>Rock Salt (Sendha Namak)</h3>
+          <p>Natural crystal salt suitable for fasting and special diets.</p>
+          <p class="meta">Available Packs: 500g, 1kg, 5kg</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="why-us" class="why section">
+      <div class="section-head">
+        <p class="eyebrow">Why Choose Us</p>
+        <h2>Reliable Local Supplier</h2>
+      </div>
+      <div class="points">
+        <div>
+          <h3>Fresh Stock Rotation</h3>
+          <p>Fast-moving inventory so products reach you crisp and clean.</p>
+        </div>
+        <div>
+          <h3>Fair Wholesale Pricing</h3>
+          <p>Transparent rates for households, resellers, and food shops.</p>
+        </div>
+        <div>
+          <h3>Doorstep Support</h3>
+          <p>Phone and WhatsApp support for repeat and urgent orders.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="order" class="order section">
+      <div class="section-head">
+        <p class="eyebrow">Quick Order</p>
+        <h2>Send Your Requirement</h2>
+      </div>
+      <form id="orderForm" class="order-form">
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your name" required />
+        </label>
+        <label>
+          Phone
+          <input type="tel" name="phone" placeholder="10-digit mobile number" required />
+        </label>
+        <label>
+          Product
+          <select name="product" required>
+            <option value="">Select a product</option>
+            <option>Premium Plain Makhana</option>
+            <option>Masala Makhana</option>
+            <option>Refined Iodized Salt</option>
+            <option>Rock Salt (Sendha Namak)</option>
+          </select>
+        </label>
+        <label>
+          Quantity
+          <input type="text" name="quantity" placeholder="Example: 5 x 1kg" required />
+        </label>
+        <label>
+          Address
+          <textarea name="address" rows="3" placeholder="Delivery address" required></textarea>
+        </label>
+        <button type="submit" class="btn primary">Submit Enquiry</button>
+      </form>
+      <p id="formStatus" class="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer">
+    <h2>MANOJ SALT SUPPLYERS</h2>
+    <p>Call: +91 90000 00000 | WhatsApp: +91 90000 00000</p>
+    <p>Email: manojsaltsupplyers@example.com</p>
+    <p class="small">Serving quality makhana and salt with trust.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
